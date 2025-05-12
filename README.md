@@ -9,8 +9,8 @@ An attendance manager for college students.
 
 ## Team
 - Yuva: Frontend UI
-- Vihan: Auth
-- Naitik: API
+- Vihan: Autherization
+- Naitik: API 
 - Aman: DB Schema
 
 ## 🛠 Setup Instructions
