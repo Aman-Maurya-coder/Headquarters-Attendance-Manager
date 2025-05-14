@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import { user } from "./models/users.js"
+import { attendanceSchema } from "./models/attendance.js";
 const app = express();
 const port = 3000;
 
@@ -30,6 +31,23 @@ app.get("/signup", (req, res) => {
     });
     userData.save();
     res.send("User signed in");
+})
+
+app.get("/setAttendance", (req, res) => {
+    const userAttendance = new attendanceSchema({
+        u_id: "abc123",
+        subjects: [
+            {
+                subjectName: "Maths",
+                attendance: {
+                    date: "2025-05-15",
+                    state: true
+                }
+            }
+        ]
+    })
+    userAttendance.save();
+    res.send("User Attendance succesfully marked");
 })
 
 app.listen(port, () => {
